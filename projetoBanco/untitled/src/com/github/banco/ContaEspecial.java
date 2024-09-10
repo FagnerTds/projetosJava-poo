@@ -3,7 +3,7 @@ package com.github.banco;
 public class ContaEspecial extends ContaInvestimento{
 
     private double tarifaMensal;
-    private double limiteCheuqueEspecial;
+    private double limiteChequeEspecial;
 
 
 
@@ -15,12 +15,36 @@ public class ContaEspecial extends ContaInvestimento{
         this.tarifaMensal = tarifaMensal;
     }
 
-    public double getLimiteCheuqueEspecial() {
-        return limiteCheuqueEspecial;
+    public double getLimiteChequeEspecial() {
+        return limiteChequeEspecial;
     }
 
-    public void setLimiteCheuqueEspecial(double limiteCheuqueEspecial) {
-        this.limiteCheuqueEspecial = limiteCheuqueEspecial;
+    public void setLimiteChequeEspecial(double limiteChequeEspecial) {
+        this.limiteChequeEspecial = limiteChequeEspecial;
+    }
+
+    public double getSaldoDisponivel() {
+        return getSaldo() + getLimiteChequeEspecial();
+    }
+
+    public void sacar(double valorSaque) {
+        if (valorSaque < 0) {
+            throw new IllegalArgumentException("valor do saque deve ser maior que 0");
+        }
+        if (valorSaque > getSaldoDisponivel()) {
+            throw new IllegalArgumentException("Não há saldo para o valor de saque"+valorSaque);
+        }
+        setSaldo(getSaldo()-valorSaque);
+
+    }
+
+    public void imprimeirDemosntrativo() {
+        System.out.println();
+        System.out.printf("Agência: %d%n", getAgencia());
+        System.out.printf("Conta: %d%n", getNumero());
+        System.out.printf("Titular: %s%n", getTitular().getNome());
+        System.out.printf("Saldo: %.2f%n", getSaldo());
+        System.out.printf("Saldo disponível: %.2f%n", getSaldoDisponivel());
     }
 
     public void debitarTarifaMensal() {

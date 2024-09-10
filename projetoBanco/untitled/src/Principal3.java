@@ -1,4 +1,5 @@
-package com.github.banco;
+import com.github.banco.ContaEspecial;
+import com.github.banco.Titular;
 
 public class Principal3 {
 
@@ -7,7 +8,7 @@ public class Principal3 {
         conta1.setTitular(new Titular("Fagner Tranquis", "44499955520"));
         conta1.setAgencia(123);
         conta1.setNumero(999999);
-        conta1.setLimiteCheuqueEspecial(1000);
+        conta1.setLimiteChequeEspecial(1000);
         conta1.setTarifaMensal(90);
 
         conta1.imprimeirDemosntrativo();

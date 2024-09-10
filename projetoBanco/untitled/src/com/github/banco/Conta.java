@@ -35,6 +35,10 @@ public class Conta {
         return saldo;
     }
 
+    protected void setSaldo(double saldo) {
+        this.saldo=saldo;
+    }
+
     public void sacar(double valorSaque) {
         if (valorSaque < 0) {
             throw new IllegalArgumentException("valor do saque deve ser maior que 0");
