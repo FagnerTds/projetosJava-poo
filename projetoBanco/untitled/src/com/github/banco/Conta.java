@@ -7,6 +7,12 @@ public class Conta {
     private int numero;
     private double saldo;
 
+    public Conta(Titular titular, int agencia, int numero) {
+        this.titular = titular;
+        this.agencia = agencia;
+        this.numero = numero;
+    }
+
     public Titular getTitular() {
         return titular;
     }
@@ -64,4 +70,12 @@ public class Conta {
         System.out.printf("Saldo: %.2f%n", getSaldo());
     }
 
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "titular=" + titular +
+                ", agencia=" + agencia +
+                ", numero=" + numero +
+                '}';
+    }
 }
