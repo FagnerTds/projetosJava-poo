@@ -37,7 +37,7 @@ public class Conta {
         this.numero = numero;
     }
 
-    public double getSaldo() {
+    public final double getSaldo() {
         return saldo;
     }
 
