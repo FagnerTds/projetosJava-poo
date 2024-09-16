@@ -1,5 +1,7 @@
 package com.github.banco;
 
+import java.util.Objects;
+
 public class Conta {
 
     private Titular titular;
@@ -78,4 +80,18 @@ public class Conta {
                 ", numero=" + numero +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Conta conta = (Conta) o;
+        return agencia == conta.agencia && numero == conta.numero;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(agencia, numero);
+    }
+    
 }

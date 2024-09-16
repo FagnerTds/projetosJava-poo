@@ -8,13 +8,14 @@ public class Principal4 {
 
         Titular titular = new Titular("Fagner Tranquis", "44499955520");
         Conta conta1 = new Conta(titular,123,9999999);
+        Conta conta2 = new Conta(titular,123,9999999);
 
-        ContaInvestimento conta2 = new ContaInvestimento(titular,123,9999999);
+        ContaInvestimento conta3 = new ContaInvestimento(titular,123,9999999);
+//
+//        ContaEspecial conta3 = new ContaEspecial(titular,123,9999999,90);
 
-        ContaEspecial conta3 = new ContaEspecial(titular,123,9999999,90);
 
 
-
-        System.out.println(conta3);
+        System.out.println(conta1.equals(conta3));
     }
 }
