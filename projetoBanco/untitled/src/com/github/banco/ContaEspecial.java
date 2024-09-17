@@ -35,7 +35,7 @@ public class ContaEspecial extends ContaInvestimento{
             throw new IllegalArgumentException("valor do saque deve ser maior que 0");
         }
         if (valorSaque > getSaldoDisponivel()) {
-            throw new IllegalArgumentException("Não há saldo para o valor de saque"+valorSaque);
+            throw new IllegalArgumentException("Saldo insuficiente para saldo");
         }
         setSaldo(getSaldo()-valorSaque);
 

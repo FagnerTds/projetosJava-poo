@@ -19,32 +19,23 @@ public class Conta {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
-        this.titular = titular;
-    }
 
     public int getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
 
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
 
     public final double getSaldo() {
         return saldo;
     }
 
-    protected void setSaldo(double saldo) {
-        this.saldo=saldo;
+    public boolean possuiGratuidadeDeImpressao() {
+        return false;
     }
 
     public void sacar(double valorSaque) {
@@ -52,7 +43,7 @@ public class Conta {
             throw new IllegalArgumentException("valor do saque deve ser maior que 0");
         }
         if (valorSaque > getSaldo()) {
-            throw new IllegalArgumentException("Não há saldo para o valor de saque"+valorSaque);
+            throw new IllegalArgumentException("Saldo insificiente para saque");
         }
         saldo-= valorSaque;
     }
